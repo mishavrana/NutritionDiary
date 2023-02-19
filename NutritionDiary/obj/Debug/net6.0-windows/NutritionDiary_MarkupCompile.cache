@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\App.xaml
-4-732376419
+4-1516141877
 
-91313800840
+9-837992313
 197561472696
-MainWindow.xaml;Views\AddWeekView.xaml;Views\AlergicProductsView.xaml;Views\LookForNoteView.xaml;
+MainWindow.xaml;Views\AddWeekView.xaml;Views\NutritionDiaryView.xaml;Views\WeekView.xaml;
 
 False
 

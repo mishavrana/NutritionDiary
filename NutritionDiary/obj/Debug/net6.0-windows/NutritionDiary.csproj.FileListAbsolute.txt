@@ -24,10 +24,10 @@ C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-wind
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\NutritionDiary.pdb
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\NutritionDiary.genruntimeconfig.cache
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\ref\NutritionDiary.dll
-C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\AlergicProductsView.g.cs
-C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\LookForNoteView.g.cs
-C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\AlergicProductsView.baml
-C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\LookForNoteView.baml
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\AddWeekView.g.cs
 C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\AddWeekView.baml
+C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\NutritionDiaryView.g.cs
+C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\WeekView.g.cs
+C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\NutritionDiaryView.baml
+C:\Users\mishavrana\Projects\NutritionDiary\NutritionDiary\obj\Debug\net6.0-windows\Views\WeekView.baml
