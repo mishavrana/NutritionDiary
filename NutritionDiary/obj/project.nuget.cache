@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "e4RbkWq+zB2w5PqwOHm6smY0SwUxTRLsp0WORGi3+/CoY/3ptdjaYDMiqofBQh872i2kzV6lMQu9qTPXj6tI4g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mishavrana\\Projects\\NutritionDiary\\NutritionDiary\\NutritionDiary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mishavrana\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\mishavrana\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\mishavrana\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
