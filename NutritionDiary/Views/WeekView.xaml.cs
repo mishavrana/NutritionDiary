@@ -18,9 +18,9 @@ namespace NutritionDiary.Views
     /// <summary>
     /// Interaction logic for AlergicProductsView.xaml
     /// </summary>
-    public partial class AlergicProductsView : UserControl
+    public partial class WeekView : UserControl
     {
-        public AlergicProductsView()
+        public WeekView()
         {
             InitializeComponent();
         }

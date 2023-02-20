@@ -18,9 +18,9 @@ namespace NutritionDiary.Views
     /// <summary>
     /// Interaction logic for LookForNoteView.xaml
     /// </summary>
-    public partial class LookForNoteView : UserControl
+    public partial class NutririonDiaryView : UserControl
     {
-        public LookForNoteView()
+        public NutririonDiaryView()
         {
             InitializeComponent();
         }
