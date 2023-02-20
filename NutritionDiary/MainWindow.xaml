@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:NutritionDiary"
         xmlns:views="clr-namespace:NutritionDiary.Views"
         mc:Ignorable="d"
-        Title="NutritionDiary" Height="500" Width="800">
+        Title="NutritionDiary" 
+        Height="500" 
+        Width="800"
+        FontSize="16">
     <Grid>
         <views:WeekView/>
     </Grid>

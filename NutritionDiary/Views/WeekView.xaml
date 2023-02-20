@@ -51,8 +51,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Good" Grid.Column="0" Margin="5 50 0 0" Width="100" HorizontalAlignment="Right"/>
-                    <Button Content="Bad" Grid.Column="1" Margin="5 50 0 0" Width="100" HorizontalAlignment="Left"/>
+                    <Button Content="Good" Grid.Column="0" Width="100" HorizontalAlignment="Right"/>
+                    <Button Content="Bad" Grid.Column="1" Width="100" HorizontalAlignment="Left"/>
                 </Grid>
             </Grid>
         </Grid>

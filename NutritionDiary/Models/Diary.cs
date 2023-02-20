@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,10 +10,14 @@ namespace NutritionDiary.Models
     public class Diary
     {
         private List<Week> _weeks;
+        private List<String> _allowedProducts; 
+        private List<String> _bannedProducts;
 
         public Diary() 
         { 
             _weeks= new List<Week>();
+            _allowedProducts= new List<String>();
+            _bannedProducts= new List<String>();
         }
 
         // Adding a weeek
