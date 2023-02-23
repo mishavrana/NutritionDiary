@@ -8,7 +8,7 @@ namespace NutritionDiary.Models
 {
     public class Week
     {
-        public string Id {  get; set; }    
+        public string Id => $"{StartDate.ToString()} - {EndDate.ToString()}";  
         public DateTime StartDate { get; set; } 
         public DateTime EndDate { get; set; }
         public IDictionary<DateTime, Reaction> DaysAndReactions { get; set; }
@@ -44,7 +44,6 @@ namespace NutritionDiary.Models
 
         public Week(DateTime startDate, DateTime endDate, string product)
         {
-            Id = startDate.ToString();
             StartDate = startDate;
             EndDate = endDate;
             DaysAndReactions = new Dictionary<DateTime, Reaction>();

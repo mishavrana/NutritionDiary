@@ -11,45 +11,39 @@ namespace NutritionDiary.ViewModels
 {
     internal class NutritionDiaryViewModel : ViewModelBase
     {
-        private readonly ObservableCollection
-        private List<Week> _weeks = new List<Week>();
-        public List<Week> Weeks
+        private readonly ObservableCollection<WeekViewModel> _weeks;
+
+        private List<string> _startAndEndDays = new List<string>();
+        public List<string> StartAndEndDays
         {
-            get { return _weeks; }
-            set
-            {
-                _weeks = value;
-                OnPropertyChanged(nameof(Weeks));
-            }
+            get { return _startAndEndDays; }
         }
 
         private List<string> _allowedProducts = new List<string>();
         public List<string> AllowedProducts
         {
             get { return _allowedProducts; }
-            set
-            {
-                _allowedProducts = value;
-                OnPropertyChanged(nameof(AllowedProducts));
-            }
         }
  
         private List<string> _bannedProducts = new List<string>();
         public List<string> BannedProducts
         {
             get { return _bannedProducts; }
-            set
-            {
-                _bannedProducts = value;
-                OnPropertyChanged(nameof(BannedProducts));
-            }
         }
 
         public ICommand NewWeekCommand { get; }
 
         public NutritionDiaryViewModel()
         {
+            _weeks = new ObservableCollection<WeekViewModel>();
+            _weeks.Add(new WeekViewModel(new Week(DateTime.Now, DateTime.Now.AddDays(5), "Potato")));
 
+            foreach (WeekViewModel week in _weeks)
+            {
+                _startAndEndDays.Add(week.Id);
+            }
+            AllowedProducts.Add("Apple");
+            AllowedProducts.Add("Carrot");
         }
 
     }

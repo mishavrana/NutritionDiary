@@ -32,7 +32,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Height="100" Margin="0 5 0 0" ItemsSource="{Binding Names}" Grid.Column="0" BorderThickness="1" BorderBrush="Black" >
+            <ListBox Height="100" Margin="0 5 0 0" ItemsSource="{Binding StartAndEndDays}" Grid.Column="0" BorderThickness="1" BorderBrush="Black" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" />
@@ -40,7 +40,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
 
-            <ListBox Margin="5 5 0 0" ItemsSource="{Binding Names}" Grid.Column="1" BorderThickness="1" BorderBrush="Black">
+            <ListBox Margin="5 5 0 0" ItemsSource="{Binding BannedProducts}" Grid.Column="1" BorderThickness="1" BorderBrush="Black">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" />
@@ -54,24 +54,26 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="New" Name="New_Week_Button" Margin="0 10 0 0"  Width="200" Grid.Column="0" Command="{Binding NewWeekCommand}"/>
+            <Button Content="New" Margin="0 10 0 0"  Width="200" Grid.Column="0" Command="{Binding NewWeekCommand}"/>
         </Grid>
 
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="395*"/>
                 <ColumnDefinition Width="395*"/>
-                <ColumnDefinition Width="419*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Approved products" FontSize="16" Margin="5,0,0,0" Grid.Column="1"/>
         </Grid>
 
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="208*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="122*"/>
+                <ColumnDefinition Width="395*"/>
             </Grid.ColumnDefinitions>
-            <ListBox Height="100" Margin="5 5 0 0" ItemsSource="{Binding Names}" Grid.Column="1" BorderThickness="1" BorderBrush="Black">
+            <ListBox Height="100" Margin="5 5 0 0" ItemsSource="{Binding AllowedProducts}" Grid.Column="4" BorderThickness="1" BorderBrush="Black">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" />

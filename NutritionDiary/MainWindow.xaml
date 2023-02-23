@@ -11,7 +11,7 @@
         Width="800"
         FontSize="16">
     <Grid>
-        <views:WeekView/>
+        <views:AddWeekView DataContext="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>
 
