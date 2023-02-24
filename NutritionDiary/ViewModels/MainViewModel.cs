@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NutritionDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ namespace NutritionDiary.ViewModels
     {
         public ViewModelBase CurrentViewModel { get; }
 
-        public MainViewModel() 
+        public MainViewModel(Diary diary) 
         {
-            CurrentViewModel = new AddWeekViewModel();
+            CurrentViewModel = new AddWeekViewModel(diary);
         }  
     }
 }

@@ -28,11 +28,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button  Content="Add" Command="{Binding AddProduct}" Width="100" HorizontalAlignment="Left"/>
+            <Button  Content="Add" Command="{Binding StartNewWeek}" Width="100" HorizontalAlignment="Left"/>
             <Button Grid.Column="1"  Content="Cancel" Command="{Binding Cancel}" Width="100" HorizontalAlignment="Right"/>
         </Grid>
-
-
-
     </Grid>
 </UserControl>

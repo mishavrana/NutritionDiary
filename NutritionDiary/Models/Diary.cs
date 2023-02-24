@@ -12,7 +12,6 @@ namespace NutritionDiary.Models
         private List<Week> _weeks;
         private List<String> _allowedProducts; 
         private List<String> _bannedProducts;
-
         public Diary() 
         { 
             _weeks= new List<Week>();
@@ -21,19 +20,22 @@ namespace NutritionDiary.Models
         }
 
         // Adding a weeek
-        public void AddNote(DateTime startDate, DateTime endDate, string product)
+        public void StartNewWeek(Week week)
         {
-            Week week = new Week(startDate, endDate, product);
             _weeks.Add(week);
         }
 
-        // Deleting a week
-        public void DeleteNote (DateTime id)
+        // Adding banned product 
+        public void AddBannedProduct(string product)
         {
-            foreach (Week note in _weeks)
-            {
-                _weeks.Where(note => note.Id == id.ToString());
-            }
+            _bannedProducts.Add(product);  
         }
+
+        // Adding allowed product 
+        public void AddAllowedProduct(string product)
+        {
+            _allowedProducts.Add(product);
+        }
+
     }
 }

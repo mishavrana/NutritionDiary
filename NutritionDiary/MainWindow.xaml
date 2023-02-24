@@ -14,4 +14,3 @@
         <views:AddWeekView DataContext="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>
-
