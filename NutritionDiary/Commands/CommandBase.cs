@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace NutritionDiary.Comands
 {
-    abstract class CommandBase : ICommand
+    public abstract class CommandBase : ICommand
     {
         public event EventHandler? CanExecuteChanged;
 

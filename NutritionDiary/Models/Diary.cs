@@ -12,6 +12,8 @@ namespace NutritionDiary.Models
         private List<Week> _weeks;
         private List<String> _allowedProducts; 
         private List<String> _bannedProducts;
+
+        public List<Week> Weeks { get { return _weeks; } }
         public Diary() 
         { 
             _weeks= new List<Week>();

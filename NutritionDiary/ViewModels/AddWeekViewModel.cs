@@ -1,5 +1,6 @@
 ﻿using NutritionDiary.Commands;
 using NutritionDiary.Models;
+using NutritionDiary.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows.Input;
 
 namespace NutritionDiary.ViewModels
 {
-    internal class AddWeekViewModel: ViewModelBase
+    public class AddWeekViewModel: ViewModelBase
     {
 
         public DateTime StartDate => DateTime.Now;
@@ -26,7 +27,8 @@ namespace NutritionDiary.ViewModels
             }
         }
 
-        private string _numberOfWeek; 
+        private string _numberOfWeek;
+
         public string NumberOfWeek
         {
             get { return _numberOfWeek; }
@@ -40,10 +42,10 @@ namespace NutritionDiary.ViewModels
         public ICommand StartNewWeek { get; }
         public ICommand Cancel { get; }
 
-        public AddWeekViewModel(Diary diary)
+        public AddWeekViewModel(Diary diary, NavigationStore navigationStore)
         {
-            StartNewWeek = new StartNewWeekCommand(this, diary);
-            Cancel = new CancelStartNewWeekCommand();
+            StartNewWeek = new StartNewWeekCommand(this, diary, navigationStore);
+            Cancel = new CancelStartNewWeekCommand(navigationStore);
         }
 
     }

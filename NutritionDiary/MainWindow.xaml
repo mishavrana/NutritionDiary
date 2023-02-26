@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NutritionDiary"
         xmlns:views="clr-namespace:NutritionDiary.Views"
+        xmlns:vms="clr-namespace:NutritionDiary.ViewModels"
         mc:Ignorable="d"
         Title="NutritionDiary" 
         Height="500" 
         Width="800"
         FontSize="16">
     <Grid>
-        <views:AddWeekView DataContext="{Binding CurrentViewModel}"/>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:NutritionDiaryViewModel}">
+                <views:NutririonDiaryView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:AddWeekViewModel}">
+                <views:AddWeekView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:CurrentWeekViewModel}">
+                <views:WeekView/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>

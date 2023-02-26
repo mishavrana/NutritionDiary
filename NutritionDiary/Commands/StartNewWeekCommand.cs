@@ -1,5 +1,6 @@
 ﻿using NutritionDiary.Comands;
 using NutritionDiary.Models;
+using NutritionDiary.Stores;
 using NutritionDiary.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,18 @@ using System.Windows;
 
 namespace NutritionDiary.Commands
 {
-    class StartNewWeekCommand : CommandBase
+    public class StartNewWeekCommand : CommandBase
     {
         private readonly AddWeekViewModel _addWeekViewModel;
         private readonly Diary _diary;
+        private readonly NavigationStore _navigationStore;
 
-        public StartNewWeekCommand(AddWeekViewModel addWeekViewModel, Diary diary)
+        public StartNewWeekCommand(AddWeekViewModel addWeekViewModel, Diary diary, NavigationStore navigationStore)
         {
             _addWeekViewModel = addWeekViewModel;
             _diary = diary;
-
             _addWeekViewModel.PropertyChanged += OnViewModelPropertyChanged;
+            _navigationStore = navigationStore;
         }
 
         private void OnViewModelPropertyChanged(object sendet, PropertyChangedEventArgs e)
@@ -44,6 +46,8 @@ namespace NutritionDiary.Commands
             {
                 _diary.StartNewWeek(week);
                 MessageBox.Show("Added new week!", "Error", MessageBoxButton.OK);
+                _navigationStore.CurrentViewModel = new NutritionDiaryViewModel(_navigationStore, _diary);
+
             } catch
             {
                 return;

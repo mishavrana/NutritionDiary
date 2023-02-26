@@ -1,4 +1,5 @@
-﻿using NutritionDiary.Models;
+﻿using NutritionDiary.Commands;
+using NutritionDiary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace NutritionDiary.ViewModels
 {
     public class CurrentWeekViewModel: ViewModelBase
     {
+
+        
         private IDictionary<DateTime, Reaction> _daysAndReactions;
         public IDictionary<DateTime, Reaction> DaysAndReactions
         {
@@ -40,7 +43,12 @@ namespace NutritionDiary.ViewModels
 
         public string CurrentDate => DateTime.Now.ToString();
 
-        public ICommand Good { get; }
-        public ICommand Bad { get; }
+        public ICommand GoodReaction { get; }
+        public ICommand BadReaction { get; }
+        public CurrentWeekViewModel()
+        {
+           GoodReaction = new GoodReactionCommand();
+           BadReaction= new BadReactionCommand();
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using NutritionDiary.Comands;
+using NutritionDiary.Stores;
+using NutritionDiary.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +9,17 @@ using System.Threading.Tasks;
 
 namespace NutritionDiary.Commands
 {
-    class CancelStartNewWeekCommand : CommandBase
+    public class CancelStartNewWeekCommand : CommandBase
     {
+        private readonly NavigationStore _navigationStore;
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+           // _navigationStore.CurrentViewModel = new NutritionDiaryViewModel(_navigationStore);
         }
+
+        public CancelStartNewWeekCommand(NavigationStore navigationStore)
+        {
+            _navigationStore = navigationStore;
+        }   
     }
 }

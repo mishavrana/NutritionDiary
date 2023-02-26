@@ -1,4 +1,5 @@
 ﻿using NutritionDiary.Models;
+using NutritionDiary.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,18 @@ namespace NutritionDiary.ViewModels
 {
     public class MainViewModel: ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        private readonly NavigationStore _navigationStore;
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        public MainViewModel(Diary diary) 
+        public MainViewModel(NavigationStore navigationStore)
         {
-            CurrentViewModel = new AddWeekViewModel(diary);
-        }  
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+        }
+
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));     
+        }
     }
 }

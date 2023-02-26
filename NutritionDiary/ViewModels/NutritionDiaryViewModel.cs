@@ -1,5 +1,6 @@
 ﻿using NutritionDiary.Commands;
 using NutritionDiary.Models;
+using NutritionDiary.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,9 +11,10 @@ using System.Windows.Input;
 
 namespace NutritionDiary.ViewModels
 {
-    internal class NutritionDiaryViewModel : ViewModelBase
+    public class NutritionDiaryViewModel : ViewModelBase
     {
         private readonly ObservableCollection<WeekViewModel> _weeks;
+        private readonly Diary _diary;
         public IEnumerable<WeekViewModel> Weeks => _weeks;
 
         private List<string> _startAndEndDays = new List<string>();
@@ -35,10 +37,24 @@ namespace NutritionDiary.ViewModels
 
         public ICommand AddNewWeek { get; }
 
-        public NutritionDiaryViewModel(Diary diary)
+        public NutritionDiaryViewModel(NavigationStore navigationStore, Diary diary)
         {
             _weeks = new ObservableCollection<WeekViewModel>();
+            _diary = diary;
+            AddNewWeek = new AddNewWeekCommand(navigationStore, diary);
+            UpdateWeeks();
+        }
+
+        private void UpdateWeeks()
+        {
+            _weeks.Clear();
+            foreach(var week in _diary.Weeks)
+            {
+                WeekViewModel weekViewModel = new WeekViewModel(week);
+                _weeks.Add(weekViewModel);
+            }
         }
 
     }
 }
+ 

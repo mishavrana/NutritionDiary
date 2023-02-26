@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NutritionDiary.ViewModels
 {
@@ -12,11 +13,12 @@ namespace NutritionDiary.ViewModels
         private readonly Week _week;
         public string Product => _week.Product;
         public DateTime StartDate => _week.StartDate;
-        public DateTime EndDate => _week.EndDate;   
+        public DateTime EndDate => _week.EndDate;
 
         public WeekViewModel(Week week)
         {
             _week = week;
+
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using NutritionDiary.Models;
+using NutritionDiary.Stores;
 using NutritionDiary.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace NutritionDiary
 {
@@ -17,16 +19,20 @@ namespace NutritionDiary
     {
 
         private readonly Diary _diary;
+        private readonly NavigationStore _navigationStore;
 
         public App()
         {
             _diary = new Diary();
+            _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel = new NutritionDiaryViewModel(_navigationStore, _diary);
+
             MainWindow = new MainWindow()
             {
-                DataContext = new  MainViewModel(_diary)
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
             base.OnStartup(e);
