@@ -20,10 +20,11 @@ namespace NutritionDiary.Commands
 
         public StartNewWeekCommand(AddWeekViewModel addWeekViewModel, Diary diary, NavigationStore navigationStore)
         {
-            _addWeekViewModel = addWeekViewModel;
             _diary = diary;
-            _addWeekViewModel.PropertyChanged += OnViewModelPropertyChanged;
+            _addWeekViewModel = addWeekViewModel;
             _navigationStore = navigationStore;
+            _addWeekViewModel.PropertyChanged += OnViewModelPropertyChanged;
+            
         }
 
         private void OnViewModelPropertyChanged(object sendet, PropertyChangedEventArgs e)
@@ -41,7 +42,7 @@ namespace NutritionDiary.Commands
 
         public override void Execute(object? parameter)
         {
-            Week week = new Week(_addWeekViewModel.StartDate, _addWeekViewModel.EndDate);
+            Week week = new Week(_addWeekViewModel.StartDate, _addWeekViewModel.EndDate, _addWeekViewModel.NewProduct);
             try
             {
                 _diary.StartNewWeek(week);
@@ -50,7 +51,7 @@ namespace NutritionDiary.Commands
 
             } catch
             {
-                return;
+                MessageBox.Show("Product field is empty", "Error", MessageBoxButton.OK);
             }
 
 

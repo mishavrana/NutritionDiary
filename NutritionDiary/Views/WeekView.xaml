@@ -12,7 +12,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock FontSize="24" Grid.Row="0">
             <Run Text="Week " />
             <Run Text="{Binding CurrentWeekNumber}" />
@@ -39,6 +39,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock FontSize="16" Grid.Row="0" HorizontalAlignment="Center">
@@ -53,6 +54,10 @@
                     </Grid.ColumnDefinitions>
                     <Button Content="Good" Command="{Binding Good}" Grid.Column="0" Width="100" HorizontalAlignment="Right"/>
                     <Button Content="Bad" Command="{Binding Bad}" Grid.Column="1" Width="100" HorizontalAlignment="Left"/>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Button Content="Done" Command="{Binding Done}" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </Grid>
         </Grid>

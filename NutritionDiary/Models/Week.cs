@@ -8,16 +8,17 @@ namespace NutritionDiary.Models
 {
     public class Week
     {
-        public string Id => $"{StartDate.ToString()} - {EndDate.ToString()}";  
+        public string Id => $"{StartDate.ToString()}-{EndDate.ToString()}";  
         public DateTime StartDate { get; set; } 
         public DateTime EndDate { get; set; }
         public IDictionary<DateTime, Reaction> DaysAndReactions { get; set; }
         public string? Product { get; set; }
 
-        public Week(DateTime startDate, DateTime endDate)
+        public Week(DateTime startDate, DateTime endDate, string product)
         {
             StartDate = startDate;
             EndDate = endDate;
+            Product = product;  
             DaysAndReactions = new Dictionary<DateTime, Reaction>();
         }
     }

@@ -32,7 +32,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Height="100" Margin="0 5 0 0" ItemsSource="{Binding Weeks}" Grid.Column="0" BorderThickness="1" BorderBrush="Black" >
+            <ListBox Height="100" Margin="0 5 0 0" ItemsSource="{Binding Weeks}" SelectedItem="{Binding SelectedItem}" Grid.Column="0" BorderThickness="1" BorderBrush="Black">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Tag" Value="{Binding SelectedItem}"/>
+                        <EventSetter Event="MouseDoubleClick" Handler="{Binding SelectWeek}"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" />

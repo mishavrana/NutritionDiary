@@ -12,6 +12,7 @@ namespace NutritionDiary.ViewModels
     {
         private readonly Week _week;
         public string Product => _week.Product;
+        public string Id => _week.Id;
         public DateTime StartDate => _week.StartDate;
         public DateTime EndDate => _week.EndDate;
 

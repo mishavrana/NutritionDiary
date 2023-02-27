@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NutritionDiary.Models;
+using NutritionDiary.Stores;
+using NutritionDiary.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
